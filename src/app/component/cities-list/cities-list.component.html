@@ -1,0 +1,19 @@
+
+<div>
+    <h1>Select City</h1>
+    <form  >
+        <div class="form-group">
+            <label for="city">Cities:</label>
+            <select formControlName="cities">
+                <option disabled>Select city</option>
+                <option>Choose city</option>
+                <option *ngFor="let city of cities">{{ city.cityName }}</option>
+            </select>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+<ul *ngFor="let city of cities">
+    <li> {{city.cityId}} </li>
+    <li> {{city.cityName}} </li>
+</ul>

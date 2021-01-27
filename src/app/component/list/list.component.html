@@ -1,0 +1,40 @@
+<h1>Sates List</h1>
+<div>
+    <h1>Select States</h1>
+    <form [formGroup]="form" (change)="submit($event.target.value)">
+        <div class="form-group">
+            <label for="State">State:</label>
+            <select formControlName="states" >
+                <option disabled>Select State</option>
+                <option>Choose State</option>
+                <option *ngFor="let state of states">{{ state.stateName }}</option>
+            </select>
+            <button  type="submit" [disabled]="!form.valid" >Submit</button>
+        </div>
+    </form>
+</div>
+<app-cities-list></app-cities-list>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>State ID</th>
+      <th>State Name</th>
+      <th>City</th>
+    </tr>
+    
+  </thead>
+  <tbody>
+    <tr *ngFor="let state of states">
+      <td>{{ state.stateId }}</td>
+      <td> {{ state.stateName }}</td> 
+        <td>
+           <tr *ngFor="let city of state.city">
+                <td>{{ city.cityId }}</td>
+                <td>{{ city.cityName }}</td>
+           </tr> 
+        </td>
+    </tr>
+  </tbody>
+</table> -->
+<router-outlet></router-outlet>
